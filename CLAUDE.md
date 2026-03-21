@@ -224,6 +224,9 @@ graph LR
 - 可访问性：aria-label + Loading 组件 + 404 页面
 - 构建通过：npm run build 成功
 - README 文档
+- ErrorBoundary：React 错误边界
+- CI/CD：GitHub Actions 自动测试部署
+- ESLint：代码规范配置
 
 ### 🔄 改进建议 (待迭代)
 1. **真实 LLM 集成**：已添加 llmService.js，用户配置 API key 后即可启用
