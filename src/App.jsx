@@ -7,9 +7,10 @@ import Settings from './components/Settings'
 import Privacy from './components/Privacy'
 import Loading from './components/Loading'
 import NotFound from './components/NotFound'
+import ErrorBoundary from './components/ErrorBoundary'
 import { useUser } from './hooks/useUser'
 
-function App() {
+function AppContent() {
   const { user, isLoading, initializeUser } = useUser()
   const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings, privacy
 
@@ -89,6 +90,14 @@ function App() {
     <div className="app">
       {renderView()}
     </div>
+  )
+}
+
+function App() {
+  return (
+    <ErrorBoundary>
+      <AppContent />
+    </ErrorBoundary>
   )
 }
 

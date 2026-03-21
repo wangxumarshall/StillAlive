@@ -1,0 +1,44 @@
+/* ErrorBoundary 组件样式 */
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background: var(--color-bg);
+}
+
+.error-content {
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-lg);
+}
+
+.error-content h1 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.error-content p {
+  color: rgba(234, 234, 234, 0.6);
+  margin-bottom: var(--space-xl);
+}
+
+.retry-btn {
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-accent);
+}
