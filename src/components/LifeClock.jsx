@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { formatLifeTime } from '../services/userService'
 import './LifeClock.css'
 
-export default function LifeClock({ user, onOpenDiary, onOpenMeaningList, onOpenSettings, onOpenShare }) {
+export default function LifeClock({ user, onOpenDiary, onOpenMeaningList, onOpenSettings, onOpenShare, onOpenAchievements }) {
   const [timeLeft, setTimeLeft] = useState(null)
   const [prevTime, setPrevTime] = useState(null)
 
@@ -127,6 +127,11 @@ export default function LifeClock({ user, onOpenDiary, onOpenMeaningList, onOpen
           <button className="action-btn meaning-btn" onClick={onOpenMeaningList}>
             <span className="btn-icon">⭐</span>
             <span className="btn-text">意义清单</span>
+          </button>
+
+          <button className="action-btn achievement-btn" onClick={onOpenAchievements}>
+            <span className="btn-icon">🏆</span>
+            <span className="btn-text">成就</span>
           </button>
         </div>
 

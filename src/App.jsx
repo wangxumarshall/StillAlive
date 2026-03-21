@@ -6,6 +6,7 @@ import MeaningList from './components/MeaningList'
 import Settings from './components/Settings'
 import Privacy from './components/Privacy'
 import Share from './components/Share'
+import Achievements from './components/Achievements'
 import Loading from './components/Loading'
 import NotFound from './components/NotFound'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -13,7 +14,7 @@ import { useUser } from './hooks/useUser'
 
 function AppContent() {
   const { user, isLoading, initializeUser } = useUser()
-  const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings, privacy, share
+  const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings, privacy, share, achievements
 
   // 检查是否需要 onboarding
   useEffect(() => {
@@ -80,6 +81,14 @@ function AppContent() {
           />
         )
 
+      case 'achievements':
+        return (
+          <Achievements
+            user={user}
+            onClose={() => setCurrentView('clock')}
+          />
+        )
+
       case 'clock':
         return (
           <LifeClock
@@ -88,6 +97,7 @@ function AppContent() {
             onOpenMeaningList={() => setCurrentView('meaningList')}
             onOpenSettings={() => setCurrentView('settings')}
             onOpenShare={() => setCurrentView('share')}
+            onOpenAchievements={() => setCurrentView('achievements')}
           />
         )
 
