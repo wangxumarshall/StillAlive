@@ -220,7 +220,10 @@ graph LR
 - 数据导出：设置页面支持 JSON 导出
 - 单元测试：Vitest 单元测试通过
 - 隐私合规：添加隐私政策页面
+- SEO 优化：Open Graph + Twitter Card + 预加载
+- 可访问性：aria-label + Loading 组件 + 404 页面
 - 构建通过：npm run build 成功
+- README 文档
 
 ### 🔄 改进建议 (待迭代)
 1. **真实 LLM 集成**：已添加 llmService.js，用户配置 API key 后即可启用
