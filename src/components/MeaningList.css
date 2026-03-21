@@ -1,0 +1,219 @@
+/* MeaningList 组件样式 */
+.meaning-list {
+  min-height: 100vh;
+  padding: var(--space-lg);
+}
+
+.meaning-container {
+  max-width: 450px;
+  margin: 0 auto;
+  animation: slideUp 0.4s ease;
+}
+
+/* 头部 */
+.meaning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.close-btn {
+  background: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 8px;
+}
+
+.meaning-header h2 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.stats {
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* 进度条 */
+.progress-section {
+  margin-bottom: var(--space-lg);
+}
+
+.progress-bar {
+  height: 4px;
+  background: rgba(234, 234, 234, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-highlight));
+  transition: width 0.5s ease;
+}
+
+.progress-hint {
+  font-size: 0.8rem;
+  color: rgba(234, 234, 234, 0.6);
+  margin-top: var(--space-xs);
+}
+
+/* 添加区域 */
+.add-section {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.add-input {
+  flex: 1;
+  padding: var(--space-md);
+  border-radius: 12px;
+}
+
+.add-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.add-btn:disabled {
+  opacity: 0.5;
+}
+
+/* 清单列表 */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.empty-state p {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.empty-state .hint {
+  color: rgba(234, 234, 234, 0.5);
+  font-size: 0.9rem;
+}
+
+/* 项卡片 */
+.item-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+}
+
+.item-card:hover {
+  border-color: var(--color-accent);
+}
+
+.item-card.completed {
+  opacity: 0.7;
+  border-color: transparent;
+}
+
+/* 复选框 */
+.checkbox {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: 2px solid var(--color-accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--color-accent);
+  background: transparent;
+  transition: all var(--transition-normal);
+}
+
+.item-card.completed .checkbox {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.checkbox:not(:disabled):hover {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+/* 内容 */
+.item-content {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.item-card.completed .item-title {
+  text-decoration: line-through;
+  color: rgba(234, 234, 234, 0.5);
+}
+
+.completed-date {
+  font-size: 0.8rem;
+  color: rgba(234, 234, 234, 0.5);
+  margin-top: var(--space-xs);
+}
+
+/* 奖励标签 */
+.reward-badge {
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(125, 249, 255, 0.1);
+  border: 1px solid var(--color-highlight);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--color-highlight);
+}
+
+/* 说明 */
+.info-section {
+  text-align: center;
+  padding: var(--space-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.info-section p {
+  font-size: 0.85rem;
+  color: rgba(234, 234, 234, 0.6);
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+}

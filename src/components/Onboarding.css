@@ -1,0 +1,175 @@
+/* Onboarding 页面样式 */
+.onboarding {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.onboarding-content {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: var(--space-2xl);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 4px;
+  margin-bottom: var(--space-xs);
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  color: var(--color-accent);
+  letter-spacing: 8px;
+}
+
+/* 欢迎文字 */
+.welcome-text {
+  margin-bottom: var(--space-2xl);
+}
+
+.welcome-text p {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.welcome-text .description {
+  font-size: 0.95rem;
+  color: rgba(234, 234, 234, 0.7);
+  line-height: 1.8;
+}
+
+/* 表单 */
+.birthday-form {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: rgba(234, 234, 234, 0.8);
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--space-md);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* 生命预览 */
+.life-preview {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-label {
+  color: rgba(234, 234, 234, 0.7);
+  font-size: 0.9rem;
+}
+
+.preview-value {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* 错误消息 */
+.error-message {
+  color: var(--color-error);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+/* 提交按钮 */
+.submit-btn {
+  width: 100%;
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  background: linear-gradient(135deg, var(--color-accent), #B8962E);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-accent);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+}
+
+/* 隐私提示 */
+.privacy-note {
+  font-size: 0.8rem;
+  color: rgba(234, 234, 234, 0.4);
+}
+
+/* 粒子效果 */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  left: var(--x);
+  animation: float-particle var(--duration) var(--delay) infinite;
+  opacity: 0.3;
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
