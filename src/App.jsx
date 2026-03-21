@@ -5,6 +5,7 @@ import DiaryPanel from './components/DiaryPanel'
 import MeaningList from './components/MeaningList'
 import Settings from './components/Settings'
 import Privacy from './components/Privacy'
+import Share from './components/Share'
 import Loading from './components/Loading'
 import NotFound from './components/NotFound'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -12,7 +13,7 @@ import { useUser } from './hooks/useUser'
 
 function AppContent() {
   const { user, isLoading, initializeUser } = useUser()
-  const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings, privacy
+  const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings, privacy, share
 
   // 检查是否需要 onboarding
   useEffect(() => {
@@ -71,6 +72,14 @@ function AppContent() {
           />
         )
 
+      case 'share':
+        return (
+          <Share
+            user={user}
+            onClose={() => setCurrentView('clock')}
+          />
+        )
+
       case 'clock':
         return (
           <LifeClock
@@ -78,6 +87,7 @@ function AppContent() {
             onOpenDiary={() => setCurrentView('diary')}
             onOpenMeaningList={() => setCurrentView('meaningList')}
             onOpenSettings={() => setCurrentView('settings')}
+            onOpenShare={() => setCurrentView('share')}
           />
         )
 

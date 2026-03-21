@@ -30,12 +30,9 @@
   margin-bottom: var(--space-2xl);
 }
 
-.header-left {
-  width: 40px;
-}
-
 .header-center {
   flex: 1;
+  text-align: center;
 }
 
 .settings-btn {

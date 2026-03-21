@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { formatLifeTime } from '../services/userService'
 import './LifeClock.css'
 
-export default function LifeClock({ user, onOpenDiary, onOpenMeaningList, onOpenSettings }) {
+export default function LifeClock({ user, onOpenDiary, onOpenMeaningList, onOpenSettings, onOpenShare }) {
   const [timeLeft, setTimeLeft] = useState(null)
   const [prevTime, setPrevTime] = useState(null)
 
@@ -46,7 +46,9 @@ export default function LifeClock({ user, onOpenDiary, onOpenMeaningList, onOpen
       <div className="clock-container">
         {/* 头部 */}
         <header className="clock-header">
-          <div className="header-left" />
+          <button className="settings-btn" onClick={onOpenShare} aria-label="分享">
+            📤
+          </button>
           <div className="header-center">
             <h1 className="app-title">WayBack</h1>
             <p className="app-tagline">珍惜当下的每一刻</p>
