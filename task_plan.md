@@ -4,7 +4,7 @@
 创建一个完整的 WayBack MVP 产品，包括：用户初始化（生日输入+生命秒数计算）、生命时钟（实时倒计时）、每日总结AI分析、意义清单功能。
 
 ## Current Phase
-Phase 5
+Phase 6 - 迭代改进
 
 ## Phases
 
@@ -37,11 +37,17 @@ Phase 5
 - **Status:** complete
 
 ### Phase 5: 提交代码 & 迭代改进
-- [ ] 提交代码到远端
-- [ ] 根据 CLAUDE.md 反思改进点
-- [ ] 更新 CLAUDE.md
-- [ ] 迭代直到所有改进完成
-- **Status:** in_progress
+- [x] 提交代码到远端
+- [x] 根据 CLAUDE.md 反思改进点
+- [x] 更新 CLAUDE.md
+- [x] 迭代直到所有改进完成
+- **Status:** complete
+
+### Phase 6: 本次迭代改进
+- [x] 完善 GitHub Actions CI/CD 工作流
+- [x] 添加组件单元测试 (llmService)
+- [x] 增强无障碍访问 (ARIA labels)
+- **Status:** complete
 
 ## Key Questions
 1. 如何实现生命秒数的精准计算？（78岁 - 出生日期）× 365.25 × 24 × 3600

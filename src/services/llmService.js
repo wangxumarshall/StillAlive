@@ -116,7 +116,7 @@ async function callClaude(prompt, apiKey, model) {
   return parseLLMResponse(content)
 }
 
-function parseLLMResponse(content) {
+export function parseLLMResponse(content) {
   if (!content) return null
 
   try {

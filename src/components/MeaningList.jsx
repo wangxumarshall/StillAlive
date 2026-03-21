@@ -40,20 +40,20 @@ export default function MeaningList({ onClose, user }) {
   const totalCount = items.length
 
   return (
-    <div className="meaning-list">
+    <div className="meaning-list" role="main" aria-label="意义清单">
       <div className="meaning-container">
         {/* 头部 */}
         <header className="meaning-header">
-          <button className="close-btn" onClick={onClose}>← 返回</button>
+          <button className="close-btn" onClick={onClose} aria-label="返回主页">← 返回</button>
           <h2>意义清单</h2>
-          <div className="stats">
+          <div className="stats" aria-label={`完成进度：${completedCount}/${totalCount}`}>
             {completedCount}/{totalCount}
           </div>
         </header>
 
         {/* 进度 */}
         {totalCount > 0 && (
-          <div className="progress-section">
+          <div className="progress-section" role="progressbar" aria-valuenow={completedCount} aria-valuemin={0} aria-valuemax={totalCount}>
             <div className="progress-bar">
               <div
                 className="progress-fill"
@@ -74,22 +74,24 @@ export default function MeaningList({ onClose, user }) {
             placeholder="添加你的'此生必做'..."
             value={newItemTitle}
             onChange={(e) => setNewItemTitle(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleAddItem()}
+            onKeyDown={(e) => e.key === 'Enter' && handleAddItem()}
+            aria-label="添加新事项"
           />
           <button
             className="add-btn"
             onClick={handleAddItem}
             disabled={!newItemTitle.trim() || isAdding}
+            aria-label="添加"
           >
             +
           </button>
         </div>
 
         {/* 清单列表 */}
-        <div className="items-list">
+        <div className="items-list" role="list" aria-label="意义清单列表">
           {items.length === 0 ? (
-            <div className="empty-state">
-              <div className="empty-icon">⭐</div>
+            <div className="empty-state" role="status">
+              <div className="empty-icon" aria-hidden="true">⭐</div>
               <p>还没有意义清单</p>
               <p className="hint">添加你此生必做的事情</p>
             </div>
@@ -98,11 +100,13 @@ export default function MeaningList({ onClose, user }) {
               <div
                 key={item.id}
                 className={`item-card ${item.completed ? 'completed' : ''}`}
+                role="listitem"
               >
                 <button
                   className="checkbox"
                   onClick={() => !item.completed && handleComplete(item.id)}
                   disabled={item.completed}
+                  aria-label={item.completed ? '已完成' : '标记为完成'}
                 >
                   {item.completed ? '✓' : ''}
                 </button>

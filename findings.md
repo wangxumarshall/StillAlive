@@ -22,10 +22,15 @@
 | localStorage | MVP 阶段快速验证，无需后端 |
 | CSS 动画 | 实现粒子动画、翻页动画、反馈动画 |
 
+## Improvements Made (This Iteration)
+1. **GitHub Actions CI/CD** - 添加自动化测试和构建流程
+2. **Unit Tests** - 添加 llmService 测试 (9个测试用例)
+3. **Accessibility** - 添加 ARIA 标签，提升无障碍访问
+
 ## Issues Encountered
 | Issue | Resolution |
 |-------|------------|
-| 无 | - |
+| parseLLMResponse 未导出 | 添加 export 关键字 |
 
 ## Resources
 - CLAUDE.md - 项目顶层设计文档

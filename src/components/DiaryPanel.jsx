@@ -53,26 +53,26 @@ export default function DiaryPanel({ onClose, user }) {
   }
 
   return (
-    <div className="diary-panel">
+    <div className="diary-panel" role="main" aria-label="今日总结">
       <div className="diary-container">
         {/* 头部 */}
         <header className="diary-header">
-          <button className="close-btn" onClick={onClose}>← 返回</button>
+          <button className="close-btn" onClick={onClose} aria-label="返回主页">← 返回</button>
           <h2>今日总结</h2>
           <div /> {/* 占位保持布局 */}
         </header>
 
         {hasSubmittedToday && !analysis ? (
-          <div className="already-submitted">
-            <div className="check-icon">✓</div>
+          <div className="already-submitted" role="status" aria-live="polite">
+            <div className="check-icon" aria-hidden="true">✓</div>
             <p>你今天已经提交过日记了</p>
             <p className="hint">明天再来吧，保持记录的习惯</p>
             <button className="back-btn" onClick={onClose}>返回时钟</button>
           </div>
         ) : analysis ? (
-          <div className="analysis-result">
-            <div className={`sentiment-badge ${analysis.sentiment}`}>
-              <span className="emoji">{getSentimentEmoji(analysis.sentiment)}</span>
+          <div className="analysis-result" role="alert" aria-live="polite">
+            <div className={`sentiment-badge ${analysis.sentiment}`} aria-label={`情绪：${analysis.sentiment}`}>
+              <span className="emoji" aria-hidden="true">{getSentimentEmoji(analysis.sentiment)}</span>
               <span className="label">
                 {analysis.sentiment === 'positive' ? '积极' :
                   analysis.sentiment === 'negative' ? '需要鼓励' : '平淡'}
