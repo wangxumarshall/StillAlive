@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { getUser, getDiaryLogs, getMeaningItems } from '../services/userService'
+import { useLanguage } from '../hooks/useLanguage'
 import './Settings.css'
 
 export default function Settings({ onClose, onOpenPrivacy }) {
   const [message, setMessage] = useState('')
+  const { language, toggleLanguage, languages } = useLanguage()
 
   const handleExport = () => {
     const user = getUser()
@@ -77,6 +79,15 @@ export default function Settings({ onClose, onOpenPrivacy }) {
           </section>
 
           {message && <p className="success-message">{message}</p>}
+
+          {/* 语言设置 */}
+          <section className="settings-section">
+            <h3>语言 / Language</h3>
+            <button className="language-toggle" onClick={toggleLanguage}>
+              <span className="current-lang">{languages[language].name}</span>
+              <span className="toggle-hint">点击切换</span>
+            </button>
+          </section>
 
           {/* 关于 */}
           <section className="settings-section">

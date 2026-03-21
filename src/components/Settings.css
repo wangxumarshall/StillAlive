@@ -98,6 +98,33 @@
   text-align: center;
 }
 
+/* 语言切换 */
+.language-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--color-text);
+}
+
+.language-toggle:hover {
+  border-color: var(--color-accent);
+}
+
+.current-lang {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.toggle-hint {
+  font-size: 0.85rem;
+  color: rgba(234, 234, 234, 0.5);
+}
+
 /* 关于 */
 .about-info {
   padding: var(--space-md);
