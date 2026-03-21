@@ -223,7 +223,9 @@ graph LR
 - 构建通过：npm run build 成功
 
 ### 🔄 改进建议 (待迭代)
-1. **真实 LLM 集成**：当前是模拟响应，需集成 Gemini/GPT-4 API
+1. **真实 LLM 集成**：已添加 llmService.js，用户配置 API key 后即可启用
+   - 支持 Gemini (推荐)、OpenAI、Claude
+   - 配置方式：复制 .env.example 为 .env 并填入 API key
 
 ### 📋 后续版本规划
 - v1.1: 社交分享功能
