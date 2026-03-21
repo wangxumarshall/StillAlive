@@ -1,0 +1,20 @@
+{
+  "name": "WayBack 归途",
+  "short_name": "WayBack",
+  "description": "生命倒计时，珍惜当下的每一刻",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0A14",
+  "theme_color": "#0C0A14",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "productivity"],
+  "lang": "zh-CN"
+}

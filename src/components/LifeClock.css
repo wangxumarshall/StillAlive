@@ -71,11 +71,44 @@
   color: var(--color-text);
   font-variant-numeric: tabular-nums;
   letter-spacing: 2px;
+  display: inline-block;
+  position: relative;
 }
 
+/* 翻页动画 */
+.flip-card {
+  perspective: 200px;
+  display: inline-block;
+}
+
+.flip-card .digit {
+  animation: flipDown 0.3s ease-in-out;
+}
+
+@keyframes flipDown {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(-90deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* 秒数变化时的闪烁效果 */
 .digit.seconds {
   color: var(--color-accent);
   text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  transition: text-shadow 0.2s ease;
+}
+
+.digit.seconds.updated {
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
 }
 
 .unit-label {

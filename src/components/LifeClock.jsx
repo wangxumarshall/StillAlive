@@ -1,23 +1,23 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { formatLifeTime } from '../services/userService'
 import './LifeClock.css'
 
 export default function LifeClock({ user, onOpenDiary, onOpenMeaningList }) {
   const [timeLeft, setTimeLeft] = useState(null)
+  const [prevTime, setPrevTime] = useState(null)
 
   // 每秒更新倒计时
   useEffect(() => {
     if (!user) return
 
     const calculateTimeLeft = () => {
-      // 实际剩余时间 = 存储的生命秒数 - 已经流逝的时间
-      // 简化：直接使用存储的秒数作为倒计时
       return user.currentLifeSeconds
     }
 
     setTimeLeft(calculateTimeLeft())
 
     const timer = setInterval(() => {
+      setPrevTime(timeLeft)
       setTimeLeft(prev => {
         if (prev <= 0) return 0
         return prev - 1
