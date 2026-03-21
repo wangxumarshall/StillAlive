@@ -5,6 +5,8 @@ import DiaryPanel from './components/DiaryPanel'
 import MeaningList from './components/MeaningList'
 import Settings from './components/Settings'
 import Privacy from './components/Privacy'
+import Loading from './components/Loading'
+import NotFound from './components/NotFound'
 import { useUser } from './hooks/useUser'
 
 function App() {
@@ -23,14 +25,12 @@ function App() {
     setCurrentView('clock')
   }
 
+  const handleGoHome = () => {
+    setCurrentView('clock')
+  }
+
   if (isLoading) {
-    return (
-      <div className="container flex items-center justify-center" style={{ height: '100vh' }}>
-        <div className="loading-spinner">
-          <div className="pulse">加载中...</div>
-        </div>
-      </div>
-    )
+    return <Loading message="加载中..." />
   }
 
   // 渲染对应视图
@@ -71,7 +71,6 @@ function App() {
         )
 
       case 'clock':
-      default:
         return (
           <LifeClock
             user={user}
@@ -80,6 +79,9 @@ function App() {
             onOpenSettings={() => setCurrentView('settings')}
           />
         )
+
+      default:
+        return <NotFound onGoHome={handleGoHome} />
     }
   }
 

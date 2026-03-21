@@ -84,6 +84,8 @@ export default function Onboarding({ onComplete }) {
               value={birthDate}
               onChange={(e) => setBirthDate(e.target.value)}
               max={new Date().toISOString().split('T')[0]}
+              aria-describedby="birthdate-hint"
+              required
             />
             {getLifePreview()}
           </div>

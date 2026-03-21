@@ -1,0 +1,46 @@
+/* NotFound 组件样式 */
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.not-found-content {
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.not-found h1 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.not-found p {
+  color: rgba(234, 234, 234, 0.6);
+  margin-bottom: var(--space-xl);
+}
+
+.home-btn {
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-accent);
+}
