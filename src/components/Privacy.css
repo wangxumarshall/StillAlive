@@ -1,0 +1,77 @@
+/* Privacy 组件样式 */
+.privacy {
+  min-height: 100vh;
+  padding: var(--space-lg);
+}
+
+.privacy-container {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: slideUp 0.4s ease;
+}
+
+/* 头部 */
+.privacy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.close-btn {
+  background: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 8px;
+}
+
+.privacy-header h2 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+/* 内容 */
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.privacy-content section h3 {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.privacy-content section p {
+  color: rgba(234, 234, 234, 0.9);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.privacy-content section ul {
+  list-style: none;
+  padding-left: var(--space-md);
+}
+
+.privacy-content section ul li {
+  color: rgba(234, 234, 234, 0.8);
+  padding: var(--space-xs) 0;
+  position: relative;
+}
+
+.privacy-content section ul li::before {
+  content: '•';
+  color: var(--color-accent);
+  position: absolute;
+  left: -15px;
+}
+
+.update-time {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(234, 234, 234, 0.5);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--glass-border);
+}

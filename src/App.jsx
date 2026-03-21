@@ -4,11 +4,12 @@ import LifeClock from './components/LifeClock'
 import DiaryPanel from './components/DiaryPanel'
 import MeaningList from './components/MeaningList'
 import Settings from './components/Settings'
+import Privacy from './components/Privacy'
 import { useUser } from './hooks/useUser'
 
 function App() {
   const { user, isLoading, initializeUser } = useUser()
-  const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings
+  const [currentView, setCurrentView] = useState('clock') // clock, diary, meaningList, settings, privacy
 
   // 检查是否需要 onboarding
   useEffect(() => {
@@ -58,6 +59,14 @@ function App() {
         return (
           <Settings
             onClose={() => setCurrentView('clock')}
+            onOpenPrivacy={() => setCurrentView('privacy')}
+          />
+        )
+
+      case 'privacy':
+        return (
+          <Privacy
+            onClose={() => setCurrentView('settings')}
           />
         )
 

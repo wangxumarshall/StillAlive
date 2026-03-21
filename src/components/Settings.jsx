@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { getUser, getDiaryLogs, getMeaningItems } from '../services/userService'
 import './Settings.css'
 
-export default function Settings({ onClose }) {
+export default function Settings({ onClose, onOpenPrivacy }) {
   const [message, setMessage] = useState('')
 
   const handleExport = () => {
@@ -87,6 +87,9 @@ export default function Settings({ onClose }) {
                 生命倒计时，珍惜当下的每一刻。
                 我们无法决定生命的长度，但可以决定生命的质量。
               </p>
+              <button className="privacy-link" onClick={onOpenPrivacy}>
+                隐私政策
+              </button>
             </div>
           </section>
         </div>

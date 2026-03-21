@@ -114,3 +114,16 @@
   color: rgba(234, 234, 234, 0.6);
   font-size: 0.9rem;
 }
+
+.privacy-link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  color: var(--color-accent);
+  background: none;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.privacy-link:hover {
+  opacity: 0.8;
+}
