@@ -218,12 +218,12 @@ graph LR
 - UI/UX：深空黑主题 + 粒子动画 + 星空背景
 - PWA 支持：manifest.json + service worker + iOS 支持
 - 数据导出：设置页面支持 JSON 导出
+- 单元测试：Vitest 单元测试通过
 - 构建通过：npm run build 成功
 
 ### 🔄 改进建议 (待迭代)
 1. **真实 LLM 集成**：当前是模拟响应，需集成 Gemini/GPT-4 API
-2. **单元测试**：添加 Jest/Vitest 测试
-3. **隐私合规**：添加隐私政策页面
+2. **隐私合规**：添加隐私政策页面
 
 ### 📋 后续版本规划
 - v1.1: 社交分享功能
