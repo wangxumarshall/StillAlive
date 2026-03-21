@@ -1,0 +1,116 @@
+/* Settings 组件样式 */
+.settings {
+  min-height: 100vh;
+  padding: var(--space-lg);
+}
+
+.settings-container {
+  max-width: 450px;
+  margin: 0 auto;
+  animation: slideUp 0.4s ease;
+}
+
+/* 头部 */
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.close-btn {
+  background: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 8px;
+}
+
+.settings-header h2 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+/* 内容 */
+.settings-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.settings-section h3 {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* 按钮 */
+.settings-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.settings-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.export-btn .btn-icon {
+  font-size: 1.25rem;
+}
+
+.danger-btn {
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+.danger-btn:hover {
+  border-color: var(--color-error);
+}
+
+/* 提示 */
+.hint {
+  font-size: 0.85rem;
+  color: rgba(234, 234, 234, 0.5);
+  margin-bottom: var(--space-md);
+}
+
+.hint.danger {
+  color: var(--color-error);
+}
+
+/* 成功消息 */
+.success-message {
+  padding: var(--space-md);
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid var(--color-success);
+  border-radius: 8px;
+  color: var(--color-success);
+  text-align: center;
+}
+
+/* 关于 */
+.about-info {
+  padding: var(--space-md);
+  background: var(--glass-bg);
+  border-radius: 12px;
+}
+
+.about-info p {
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.about-info .description {
+  color: rgba(234, 234, 234, 0.6);
+  font-size: 0.9rem;
+}

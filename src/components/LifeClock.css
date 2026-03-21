@@ -24,7 +24,33 @@
 
 /* 头部 */
 .clock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: var(--space-2xl);
+}
+
+.header-left {
+  width: 40px;
+}
+
+.header-center {
+  flex: 1;
+}
+
+.settings-btn {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.settings-btn:hover {
+  opacity: 1;
 }
 
 .app-title {
